@@ -16,20 +16,29 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="css/style.css">
         <title>PHP Badwords</title>
     </head>
     <body>
 
-        <h2>Citazione:</h2>
-        <p><?php echo $text ?></p>
+        <div class="wrapper">
+            <div class="item">
+                <h2>Citazione</h2>
+                <p><?php echo $text ?></p>
+            </div>
 
-        <h2>Lunghezza:</h2>
-        <p>La lunghezza della citazione è di <strong><?php echo strlen($text) ?></strong> caratteri.</p>
+             <div class="item">
+                 <h2>Citazione censurata</h2>
+                 <p><?php echo $censoredText ?></p>
+                 <a href="?firstBadWord=<?php echo $firstCensoredWord ?>&secondBadWord=<?php echo $secondCensoredWord ?>" class="btn">Clicca per censurare</a>
+             </div>
 
-        <h2>Citazione censurata:</h2>
-        <p><?php echo $censoredText ?></p>
+             <div class="item">
+                 <h2>Lunghezza</h2>
+                 <p>La lunghezza della citazione è di <strong><?php echo strlen($text) ?></strong> caratteri.</p>
+             </div>
+        </div>
 
-        <a href="?firstBadWord=<?php echo $firstCensoredWord ?>&secondBadWord=<?php echo $secondCensoredWord ?>"><strong>Clicca per censurare</strong></a>
 
     </body>
 </html>
