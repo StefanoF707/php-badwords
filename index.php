@@ -2,10 +2,12 @@
 
     $text = "Dodici voci urlavano rabbiose, ed erano tutte uguali. Non c'era più alcun dubbio su ciò che era successo alla faccia dei maiali. Dall'esterno le creature volgevano lo sguardo dal maiale all'uomo, e dall'uomo al maiale, e ancora dal maiale all'uomo: ma era già impossibile distinguere l'uno dall'altro.";
 
-    $badWord = $_GET["badWord"];
-    $censoredWord = "maiale";
+    $firstBadWord = $_GET["firstBadWord"];
+    $secondBadWord = $_GET["secondBadWord"];
+    $firstCensoredWord = "maiale";
+    $secondCensoredWord = "maiali";
 
-    $censoredText = str_replace($badWord, "***", $text);
+    $censoredText = str_replace($secondBadWord, "***", str_replace($firstBadWord, "***", $text)) ;
 
  ?>
 <!DOCTYPE html>
@@ -27,7 +29,7 @@
         <h2>Citazione censurata:</h2>
         <p><?php echo $censoredText ?></p>
 
-        <a href="?badWord=<?php echo $censoredWord ?>"><strong>Clicca per censurare</strong></a>
+        <a href="?firstBadWord=<?php echo $firstCensoredWord ?>&secondBadWord=<?php echo $secondCensoredWord ?>"><strong>Clicca per censurare</strong></a>
 
     </body>
 </html>
