@@ -3,6 +3,7 @@
     $text = "Dodici voci urlavano rabbiose, ed erano tutte uguali. Non c'era più alcun dubbio su ciò che era successo alla faccia dei maiali. Dall'esterno le creature volgevano lo sguardo dal maiale all'uomo, e dall'uomo al maiale, e ancora dal maiale all'uomo: ma era già impossibile distinguere l'uno dall'altro.";
 
     $badWord = $_GET["badWord"];
+    $censoredWord = "maiale";
 
     $censoredText = str_replace($badWord, "***", $text);
 
@@ -25,6 +26,8 @@
 
         <h2>Citazione censurata:</h2>
         <p><?php echo $censoredText ?></p>
+
+        <a href="?badWord=<?php echo $censoredWord ?>"><strong>Clicca per censurare</strong></a>
 
     </body>
 </html>
